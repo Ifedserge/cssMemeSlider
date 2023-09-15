@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.wraper{
+    max-width: 90%;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+.image{
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transform: scale(1.5);
+}
+/* .image1, .image2{
+    display: none;
+} */
+.image img{
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+}
