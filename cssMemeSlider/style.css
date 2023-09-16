@@ -1,37 +1,43 @@
 *{
     margin: 0;
     padding: 0;
-    /* box-sizing: border-box; */
 }
 body{
     background-color: rgb(59, 59, 59);
 }
 .wraper{
-    width: 80%;
+    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
-    border: 1px solid red;
+}
+.slider{
+    max-width: 1024px;
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
 }
 .inputs{
     display: flex;
+    flex-direction: column-reverse;
 }
 input{
     display: none;
 }
-/* .labels{
+.labels{
     display: flex;
-} */
+    justify-content: end;
+    transform: translateY(-60%);
+    z-index: 111;
+}
 label{
     width: 15px;
     height: 15px;
     background-color: rgb(59, 59, 59);
     border-radius: 50%;
     padding: 10px 1px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     margin: 1px;
     cursor: pointer;
-    /* transform: translateY(-1rem); */
 }
 label .point{
     width: 10px;
@@ -41,30 +47,61 @@ label .point{
     border: 1px solid blue;
     box-sizing: border-box;
     display: block;
+    transition: all .3s ease;
 }
 label:hover .point{
     border: 1px solid wheat;
-    /* border: transparent; */
+    transition: all .7s ease;
     box-sizing: border-box;
     background-color: white;
 }
 label:active .point{
     opacity: 0.6;
 }
-/* #slide01:checked~.labels #label1 .point,
+
+#slide01:checked~.labels #label1 .point,
 #slide02:checked~.labels #label2 .point,
 #slide03:checked~.labels #label3 .point,
 #slide04:checked~.labels #label4 .point,
 #slide05:checked~.labels #label5 .point{
     background-color: transparent;
-} */
-#slide01:checked~ #label1 .point,
-#slide02:checked~ #label2 .point,
-#slide03:checked~ #label3 .point,
-#slide04:checked~ #label4 .point,
-#slide05:checked~ #label5 .point{
-    background-color: transparent;
 }
 .slide:checked~.labels .label:hover .point{
     border: 3px solid wheat;
+}
+
+.slides{
+    display: flex;
+    flex-direction: row;
+    /* overflow: hidden; */
+    width: 500%;
+}
+.slide {
+    width: 100%;
+    margin: 0 auto;
+}
+.slide img{
+    max-width: 1024px;
+    width: 100%;
+}
+.slide p {
+    color: white;
+    font-size: 18px;
+    padding-top: 15px;
+}
+
+#slide01:checked~.slides{
+    transform: translateX(0);
+}
+#slide02:checked~.slides{
+    transform: translateX(-20%);
+}
+#slide03:checked~.slides{
+    transform: translateX(-40%);
+}
+#slide04:checked~.slides{
+    transform: translateX(-60%);
+}
+#slide05:checked~.slides{
+    transform: translateX(-80%);
 }
