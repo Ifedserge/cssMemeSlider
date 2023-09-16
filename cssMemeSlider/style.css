@@ -26,10 +26,10 @@ input{
 .labels{
     display: flex;
     justify-content: end;
-    transform: translateY(-60%);
     z-index: 111;
 }
 label{
+    transform: translateY(-300%);
     width: 15px;
     height: 15px;
     background-color: rgb(59, 59, 59);
@@ -73,21 +73,22 @@ label:active .point{
 .slides{
     display: flex;
     flex-direction: row;
-    /* overflow: hidden; */
     width: 500%;
+    transition: all .7s ease;
 }
 .slide {
     width: 100%;
     margin: 0 auto;
 }
 .slide img{
-    max-width: 1024px;
     width: 100%;
 }
 .slide p {
     color: white;
     font-size: 18px;
     padding-top: 15px;
+    z-index: 222;
+    width: 50%;
 }
 
 #slide01:checked~.slides{
@@ -104,4 +105,46 @@ label:active .point{
 }
 #slide05:checked~.slides{
     transform: translateX(-80%);
+}
+@media(max-width: 1024px){
+    .labels{
+        justify-content: center;
+    }
+    label{
+        transform: translateY(-500%);
+    }
+   .slides .slide{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   }
+   .slides .slide p{
+    padding-top: 100px;
+    max-width: 50%;
+    width: auto;
+   }
+}
+@media(max-width: 700px){
+    label{
+        transform: translateY(-550%);
+    }
+   .slides .slide{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+   }
+   .slides .slide p{
+    max-width: 70%;
+    width: auto;
+   }
+}
+@media(max-width: 434px){
+    label{
+        transform: translateY(-700%);
+    }
+}
+@media(max-width: 320px){
+    label{
+        transform: translateY(-800%);
+    }
 }
